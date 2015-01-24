@@ -1,1 +1,0 @@
-# daniel-west.github.io

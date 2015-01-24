@@ -1,0 +1,40 @@
+body {
+    background-color:#E6E6E6;
+}
+ul {
+    margin-left:auto;
+    margin-bottom:auto;
+    width:90%;
+}
+.table1 {
+    font-family:verdana;
+    border:2px solid black;
+    border-radius:10px;
+    margin-left: auto;
+    margin-right: auto;
+    width:50%;
+}
+td {
+    border: 1px solid white;
+}
+.first {
+    background-color:#BFB495;
+}
+.second {
+    background-color:#D7C48F;
+}
+.links {
+    height: 25px;
+    width: 80px;
+    border: 2px solid black;
+    border-radius: 5px;
+    display:inline-block;
+    text-align: center;
+    background-color:#BFB495;
+}
+.links a { text-decoration:none;    
+}
+.tabs li:hover { background-color: yellow;}
+a:visited{
+    color:black;
+}
