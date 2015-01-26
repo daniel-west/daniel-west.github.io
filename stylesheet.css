@@ -59,13 +59,16 @@ td {
 	text-shadow: 2px 2px 2px grey;
 	box-shadow: 4px 4px 2px #BFB495;
 }
-.links a { text-decoration:none;    
+.links a { text-decoration:none;
+}
+.links a:link{
+	color:black;
 }
 .tabs li:hover { 
 	background-color: tan;
 }
-a:visited{
-    color:black;
+.links a:visited{
+    color:red;
 }
 div#fixedfooter {
 	position:fixed;
