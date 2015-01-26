@@ -67,9 +67,6 @@ td {
 .tabs li:hover { 
 	background-color: tan;
 }
-.links a:visited{
-    color:red;
-}
 div#fixedfooter {
 	position:fixed;
 	bottom:0px;
