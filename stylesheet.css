@@ -1,6 +1,7 @@
 body {
 	background-image:url("http://news.uns.purdue.edu/images/+2008/gateway-arch.jpg");
 	margin: 320px 0 0 660px;
+	width:960px;
 }
 
 div#fixedheader {
