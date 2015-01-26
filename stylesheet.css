@@ -1,7 +1,8 @@
 body {
-    background-color:#E6E6E6;
-	margin:200px 0 0 100px;
+	background-image:url("http://news.uns.purdue.edu/images/+2008/gateway-arch.jpg");
+	margin: 320px 0 0 660px;
 }
+
 div#fixedheader {
 	position:fixed;
 	top:0px;
@@ -9,9 +10,13 @@ div#fixedheader {
 	width:100%;
 	color:#CCC;
 	background:#333;
-	padding:40px;
+	padding:30px;
 }
 #PUbanner {
+	height:60px;
+	width:auto;
+}
+#PUpete {
 	height:60px;
 	width:auto;
 }
@@ -23,12 +28,15 @@ ul {
 .panes {
 	margin-left:auto;
     margin-bottom:auto;
-	margin-top: 10px;
+	margin-top: 5px;
     width:100%;
 }
 table {
-	border: 2px solid black;
-	border-radius: 5px;
+	border: 5px solid black;
+	border-radius: 10px;
+	background-color:white;
+	font-family:franklin gothic medium;
+	box-shadow: 10px 10px 5px #BFB495;
 }
 td {
     border: 1px solid black;
@@ -41,13 +49,15 @@ td {
     background-color:#D7C48F;
 }
 .links {
-    height: 25px;
-    width: 80px;
-    border: 2px solid black;
+    padding:5px;
+    border: 5px solid black;
     border-radius: 5px;
     display:inline-block;
     text-align: center;
     background-color:#BFB495;
+	font-family:franklin gothic medium;
+	text-shadow: 2px 2px 2px grey;
+	box-shadow: 4px 4px 2px #BFB495;
 }
 .links a { text-decoration:none;    
 }
