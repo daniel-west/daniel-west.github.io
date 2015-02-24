@@ -1,10 +1,9 @@
-country,math average,percent math,science average,percent science
-Korea,605,15,587,11
-Singapore,606,21,583,9
-Finland,545,18,570,13
-Japan,585,17,559,10
-China - Taipei,591,12,552,9
-Russian Federation,542,16,552,8
-United States,541,19,544,10
-Czech Republic,511,21,536,8
-
+country,math average,science average
+Korea,605,587
+Singapore,606,583
+Finland,545,570
+Japan,585,559
+China - Taipei,591,552
+Russian Federation,542,552
+United States,541,544
+Czech Republic,511,536
