@@ -1,9 +1,10 @@
-country,total hours,math average,math hours per year,percent math,science average,science hours per year,percent science
-Korea,789,605,121,15,587,92,11
-Singapore,"1,012",606,208,21,583,96,9
-Finland,779,545,139,18,570,98,13
-Japan,891,585,150,17,559,91,10
-China - Taipei,989,591,133,12,552,90,9
-Russian Federation,660,542,104,16,552,49,8
-United States,"1,078",541,206,19,544,105,10
-Czech Republic,782,511,163,21,536,60,8
+country,math average,percent math,science average,percent science
+Korea,605,15,587,11
+Singapore,606,21,583,9
+Finland,545,18,570,13
+Japan,585,17,559,10
+China - Taipei,591,12,552,9
+Russian Federation,542,16,552,8
+United States,541,19,544,10
+Czech Republic,511,21,536,8
+
