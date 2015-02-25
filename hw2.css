@@ -1,0 +1,56 @@
+div#fixedheader {
+	position:fixed;
+	top:0px;
+	left:0px;
+	width:100%;
+	color:#CCC;
+	background:#333;
+	padding:30px;
+}
+#PUbanner {
+	height:60px;
+	width:auto;
+}
+.header {
+	display:inline-block;
+}
+#title {
+	margin:0 0 15px 220px;
+	font-size: 150%;
+	}
+body{
+	background-color:#F1ECD6;
+	}
+#tableapps{
+	width:750px;
+	margin-top: 180px;
+	margin-left: auto;
+	margin-right: auto;
+	}
+#collegeapps{
+	text-align:center;
+	padding: 3px;
+	}
+td{
+	border: 2px solid black;
+}
+th{
+	border: 2px solid black;
+	background:gray;
+}
+p{
+width:740px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0px;
+	font-size:75%;
+}
+div#fixedfooter {
+	position:fixed;
+	bottom:0px;
+	left:0px;
+	width:100%;
+	color:#F1ECD6;
+	background:#333;
+	height:10px;
+}
