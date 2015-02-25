@@ -23,6 +23,16 @@ body {
 
 </style>
 <body>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-WLRLFS"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WLRLFS');</script>
+<!-- End Google Tag Manager -->
+
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script>
 
@@ -57,13 +67,13 @@ var svg = d3.select("body").append("svg")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 d3.csv("data.csv", function(error, data) {
-  var ageNames = d3.keys(data[0]).filter(function(key) { return key !== "State"; });
+  var ageNames = d3.keys(data[0]).filter(function(key) { return key !== "country"; });
 
   data.forEach(function(d) {
     d.ages = ageNames.map(function(name) { return {name: name, value: +d[name]}; });
   });
 
-  x0.domain(data.map(function(d) { return d.State; }));
+  x0.domain(data.map(function(d) { return d.country; }));
   x1.domain(ageNames).rangeRoundBands([0, x0.rangeBand()]);
   y.domain([0, d3.max(data, function(d) { return d3.max(d.ages, function(d) { return d.value; }); })]);
 
@@ -80,15 +90,15 @@ d3.csv("data.csv", function(error, data) {
       .attr("y", 6)
       .attr("dy", ".71em")
       .style("text-anchor", "end")
-      .text("Population");
+      .text("Score");
 
-  var state = svg.selectAll(".state")
+  var country = svg.selectAll(".country")
       .data(data)
     .enter().append("g")
       .attr("class", "g")
-      .attr("transform", function(d) { return "translate(" + x0(d.State) + ",0)"; });
+      .attr("transform", function(d) { return "translate(" + x0(d.country) + ",0)"; });
 
-  state.selectAll("rect")
+  country.selectAll("rect")
       .data(function(d) { return d.ages; })
     .enter().append("rect")
       .attr("width", x1.rangeBand())
