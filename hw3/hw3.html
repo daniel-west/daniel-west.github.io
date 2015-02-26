@@ -155,7 +155,7 @@ var svg = d3.select("body").append("svg")
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-d3.csv("data.csv", function(error, data) {
+d3.csv("hours.csv", function(error, data) {
   var ageNames = d3.keys(data[0]).filter(function(key) { return key !== "country"; });
 
   data.forEach(function(d) {
