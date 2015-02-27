@@ -15,7 +15,7 @@ div#fixedheader {
 	display:inline-block;
 }
 #title {
-	margin:0 0 15px 220px;
+	/*margin:0 0 15px 220px;*/
 	font-size: 300%;
 	}
 #catchy {
