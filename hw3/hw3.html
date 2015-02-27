@@ -1,31 +1,40 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <style>
-
 body {
   font: 10px sans-serif;
 }
-
 .axis path,
 .axis line {
   fill: none;
   stroke: #000;
   shape-rendering: crispEdges;
 }
-
 .bar {
   fill: steelblue;
 }
-
 .x.axis path {
   display: none;
 }
-
 </style>
-<body>
-<script src="http://d3js.org/d3.v3.min.js"></script>
-<script>
 
+<head>
+<title>Daniel West - HW 3</title>
+		<link type="text/css" rel="stylesheet" href="hw3.css"/>
+</head>
+
+<body>
+
+	<div id="fixedheader">
+		<div class="header"> <img id="PUbanner" src="https://www.purdue.edu/purdue/images/logo.png" />
+		</div>
+		<div id = "title" class="header">IE 590 - Data Visualization Theory and Practice
+		</div>
+	</div>
+	
+<script src="http://d3js.org/d3.v3.min.js"></script>
+
+<script>
 var margin = {top: 20, right: 20, bottom: 30, left: 40},
     width = 960 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
@@ -115,7 +124,9 @@ d3.csv("data.csv", function(error, data) {
       .attr("dy", ".35em")
       .style("text-anchor", "end")
       .text(function(d) { return d; });
-
 });
 
 </script>
+	<div id="fixedfooter"></div>
+</body>
+</html>
