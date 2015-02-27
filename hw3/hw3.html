@@ -1,8 +1,7 @@
-<!DOCTYPE html>
 <!DOCYTYPE html>
 <html> 
 <head>
-<title>Daniel West - HW 2</title>
+<title>Daniel West - HW 3</title>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		<script src="hw3.js"></script>
 		<link type="text/css" rel="stylesheet" href="hw3.css"/>
@@ -28,8 +27,14 @@ body {
 .x.axis path {
   display: none;
 }
-
 </style>
+<body>
+	<div id="fixedheader">
+		<div class="header"> <img id="PUbanner" src="https://www.purdue.edu/purdue/images/logo.png" />
+		</div>
+		<div id = "title" class="header">IE 590 - Data Visualization Theory and Practice
+		</div>
+	</div>
 <body marginwidth="0" marginheight="0">
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script>
@@ -125,7 +130,7 @@ d3.csv("data.csv", function(error, data) {
       .text(function(d) { return d; });
 
 });
-
 </script>
+	<div id="fixedfooter"></div>
 </body>
 </html>
