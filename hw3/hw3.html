@@ -1,54 +1,46 @@
-<!DOCYTYPE html>
-<head>
-<title>Daniel West - HW 3</title>
-		<link type="text/css" rel="stylesheet" href="hw3.css"/>
-</head>
+<!DOCTYPE html>
 <meta charset="utf-8">
 <style>
+
 body {
   font: 10px sans-serif;
 }
+
 .axis path,
 .axis line {
   fill: none;
   stroke: #000;
   shape-rendering: crispEdges;
 }
+
 .bar {
   fill: steelblue;
 }
+
 .x.axis path {
   display: none;
 }
+
 </style>
-
 <body>
-	<div id="fixedheader">
-		<div class="header"> <img id="PUbanner" src="https://www.purdue.edu/purdue/images/logo.png" />
-		</div>
-		<div id = "title" class="header">IE 590 - Data Visualization Theory and Practice
-		</div>
-	</div>
 <script src="http://d3js.org/d3.v3.min.js"></script>
-
 <script>
+
 var margin = {top: 20, right: 20, bottom: 30, left: 40},
     width = 960 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
-var x0 = d3.scale.ordinal()
+var x = d3.scale.ordinal()
     .rangeRoundBands([0, width], .1);
 
-var x1 = d3.scale.ordinal();
-
 var y = d3.scale.linear()
-    .range([height, 0]);
+    .rangeRound([height, 0]);
 
 var color = d3.scale.ordinal()
     .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
 
 var xAxis = d3.svg.axis()
-    .scale(x0)
+    .scale(x)
     .orient("bottom");
 
 var yAxis = d3.svg.axis()
@@ -63,15 +55,18 @@ var svg = d3.select("body").append("svg")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 d3.csv("data.csv", function(error, data) {
-  var ageNames = d3.keys(data[0]).filter(function(key) { return key !== "State"; });
+  color.domain(d3.keys(data[0]).filter(function(key) { return key !== "State"; }));
 
   data.forEach(function(d) {
-    d.ages = ageNames.map(function(name) { return {name: name, value: +d[name]}; });
+    var y0 = 0;
+    d.ages = color.domain().map(function(name) { return {name: name, y0: y0, y1: y0 += +d[name]}; });
+    d.total = d.ages[d.ages.length - 1].y1;
   });
 
-  x0.domain(data.map(function(d) { return d.State; }));
-  x1.domain(ageNames).rangeRoundBands([0, x0.rangeBand()]);
-  y.domain([0, d3.max(data, function(d) { return d3.max(d.ages, function(d) { return d.value; }); })]);
+  data.sort(function(a, b) { return b.total - a.total; });
+
+  x.domain(data.map(function(d) { return d.State; }));
+  y.domain([0, d3.max(data, function(d) { return d.total; })]);
 
   svg.append("g")
       .attr("class", "x axis")
@@ -92,19 +87,18 @@ d3.csv("data.csv", function(error, data) {
       .data(data)
     .enter().append("g")
       .attr("class", "g")
-      .attr("transform", function(d) { return "translate(" + x0(d.State) + ",0)"; });
+      .attr("transform", function(d) { return "translate(" + x(d.State) + ",0)"; });
 
   state.selectAll("rect")
       .data(function(d) { return d.ages; })
     .enter().append("rect")
-      .attr("width", x1.rangeBand())
-      .attr("x", function(d) { return x1(d.name); })
-      .attr("y", function(d) { return y(d.value); })
-      .attr("height", function(d) { return height - y(d.value); })
+      .attr("width", x.rangeBand())
+      .attr("y", function(d) { return y(d.y1); })
+      .attr("height", function(d) { return y(d.y0) - y(d.y1); })
       .style("fill", function(d) { return color(d.name); });
 
   var legend = svg.selectAll(".legend")
-      .data(ageNames.slice().reverse())
+      .data(color.domain().slice().reverse())
     .enter().append("g")
       .attr("class", "legend")
       .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
@@ -123,7 +117,5 @@ d3.csv("data.csv", function(error, data) {
       .text(function(d) { return d; });
 
 });
+
 </script>
-	<div id="fixedfooter"></div>
-</body>
-</html>
