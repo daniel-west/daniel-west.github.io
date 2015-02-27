@@ -1,5 +1,4 @@
 div#fixedheader {
-	position:fixed;
 	top:0px;
 	left:0px;
 	width:100%;
@@ -22,7 +21,7 @@ div#fixedheader {
 	font-size: 200%;
 	}
 #catchy {
-	margin-top:200px;
+	margin-top:130px;
 	margin-left:20px;
 }
 body{
