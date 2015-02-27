@@ -11,9 +11,9 @@ div#fixedheader {
 	height:60px;
 	width:auto;
 }
-.header {
+/*.header {
 	display:inline-block;
-}
+}*/
 #title {
 	/*margin:0 0 15px 220px;*/
 	font-size: 300%;
