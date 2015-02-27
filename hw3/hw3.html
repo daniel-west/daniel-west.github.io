@@ -10,12 +10,16 @@
 	<div id="fixedheader">
 		<div class="header"> <img id="PUbanner" src="https://www.purdue.edu/purdue/images/logo.png" />
 		</div>
-		<div id = "title" class="header">IE 590 - Data Visualization Theory and Practice
+		<div id = "title" class="header">IE 590 - Homework 3
 		</div>
 	</div>
 	
 <script src="http://d3js.org/d3.v3.min.js"></script>
 
+<div id="catchy">
+	<h1>Bet you can't guess the top rated country in early education!</h1>
+</div>
+<div>
 <script>
 var margin = {top: 20, right: 20, bottom: 30, left: 40},
     width = 960 - margin.left - margin.right,
@@ -107,8 +111,8 @@ d3.csv("data.csv", function(error, data) {
       .style("text-anchor", "end")
       .text(function(d) { return d; });
 });
-
 </script>
+</div>
 	<div id="fixedfooter"></div>
 </body>
 </html>
