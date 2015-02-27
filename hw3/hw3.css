@@ -19,7 +19,16 @@ div#fixedheader {
 	font-size: 300%;
 	}
 #catchy {
-	margin:200px 0 0 0;
+	width:750px;
+	margin-top:200px;
+	margin-left:auto;
+	margin-right:auto;
+}
+#catchy2 {
+	width:750px;
+	margin-top:10px;
+	margin-left:auto;
+	margin-right:auto;
 }
 body{
 	background-color:#F1ECD6;
