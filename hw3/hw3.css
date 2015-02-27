@@ -6,7 +6,6 @@ div#fixedheader {
 	color:#CCC;
 	background:#333;
 	padding:30px;
-	display:inline-block;
 }
 #PUbanner {
 	height:60px;
@@ -18,6 +17,7 @@ div#fixedheader {
 #title {
 	/*margin:0 0 15px 220px;*/
 	font-size: 300%;
+	display:inline-block;
 	}
 #catchy {
 	width:750px;
