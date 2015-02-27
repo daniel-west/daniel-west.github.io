@@ -1,0 +1,32 @@
+div#fixedheader {
+	position:fixed;
+	top:0px;
+	left:0px;
+	width:100%;
+	color:#CCC;
+	background:#333;
+	padding:30px;
+}
+#PUbanner {
+	height:60px;
+	width:auto;
+}
+.header {
+	display:inline-block;
+}
+#title {
+	margin:0 0 15px 220px;
+	font-size: 300%;
+	}
+body{
+	background-color:#F1ECD6;
+	}
+div#fixedfooter {
+	position:fixed;
+	bottom:0px;
+	left:0px;
+	width:100%;
+	color:#F1ECD6;
+	background:#333;
+	height:100px;
+}

@@ -1,4 +1,12 @@
 <!DOCTYPE html>
+<!DOCYTYPE html>
+<html> 
+<head>
+<title>Daniel West - HW 2</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="hw3.js"></script>
+		<link type="text/css" rel="stylesheet" href="hw3.css"/>
+</head>
 <meta charset="utf-8">
 <style>
 
@@ -22,17 +30,7 @@ body {
 }
 
 </style>
-<body>
-<!-- Google Tag Manager -->
-<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-WLRLFS"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-WLRLFS');</script>
-<!-- End Google Tag Manager -->
-
+<body marginwidth="0" marginheight="0">
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script>
 
@@ -67,13 +65,13 @@ var svg = d3.select("body").append("svg")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 d3.csv("data.csv", function(error, data) {
-  var ageNames = d3.keys(data[0]).filter(function(key) { return key !== "country"; });
+  var ageNames = d3.keys(data[0]).filter(function(key) { return key !== "State"; });
 
   data.forEach(function(d) {
     d.ages = ageNames.map(function(name) { return {name: name, value: +d[name]}; });
   });
 
-  x0.domain(data.map(function(d) { return d.country; }));
+  x0.domain(data.map(function(d) { return d.State; }));
   x1.domain(ageNames).rangeRoundBands([0, x0.rangeBand()]);
   y.domain([0, d3.max(data, function(d) { return d3.max(d.ages, function(d) { return d.value; }); })]);
 
@@ -90,15 +88,15 @@ d3.csv("data.csv", function(error, data) {
       .attr("y", 6)
       .attr("dy", ".71em")
       .style("text-anchor", "end")
-      .text("Score");
+      .text("Population");
 
-  var country = svg.selectAll(".country")
+  var state = svg.selectAll(".state")
       .data(data)
     .enter().append("g")
       .attr("class", "g")
-      .attr("transform", function(d) { return "translate(" + x0(d.country) + ",0)"; });
+      .attr("transform", function(d) { return "translate(" + x0(d.State) + ",0)"; });
 
-  country.selectAll("rect")
+  state.selectAll("rect")
       .data(function(d) { return d.ages; })
     .enter().append("rect")
       .attr("width", x1.rangeBand())
@@ -129,3 +127,5 @@ d3.csv("data.csv", function(error, data) {
 });
 
 </script>
+</body>
+</html>
