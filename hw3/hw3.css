@@ -5,7 +5,7 @@ div#fixedheader {
 	width:100%;
 	color:#CCC;
 	background:#333;
-	padding:30px;
+	padding:20px;
 }
 #PUbanner {
 	height:60px;
@@ -34,7 +34,7 @@ div#fixedfooter {
 	width:100%;
 	color:#F1ECD6;
 	background:#333;
-	height:100px;
+	height:10px;
 }
 
 .axis path,.axis line {
