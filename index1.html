@@ -69,9 +69,9 @@
 			.data(update)
 			.enter().append("text")
 			.attr("class", "univ")
-		    .attr("x", function(d) { return d.order*100+15 })
-		    .attr("y", function(d) { return height+15})
-		    .text(function(d) {return d.university})
+			.attr("x", function(d) { return d.order*100+15 })
+			.attr("y", function(d) { return height+15})
+			.text(function(d) {return d.university})
 			
 		svg.selectAll(".rect")
 	    	.data(update)
