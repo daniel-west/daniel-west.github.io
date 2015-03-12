@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<head>
+	<title>Daniel West - Exam1</title>
+	<link type="text/css" rel="stylesheet" href="exam1.css"/>
+	<meta charset="Utf-8">
+</head>
+
+<body>
+	<div id="fixedheader">
+		<div class="header"> <img id="PUbanner" src="https://www.purdue.edu/purdue/images/logo.png" />
+		</div>
+		<div id = "title" class="header">IE 590 - Exam 1
+		</div>
+	</div>
+	
+<script src="http://d3js.org/d3.v3.min.js"></script>
+
+<div> 
+	<ul> 
+		<li><a href = "http://daniel-west.github.io/index1.html"> Link to part 1</a></li>
+		<li><a href = "http://daniel-west.github.io/index2.html"> Link to part 2</a></li>
+		<li><a href = "http://daniel-west.github.io/index3.html"> Link to part 3</a></li>
+	</ul>
+</div>
+
+
+<h2 style="margin-left:100px"> Senior IE Students by University</h2>
+<div style="width:100px;margin:0 auto;">
+<script type="text/javascript">
+    var margin = {top: 10, left: 30},
+        width = 700;
+        height = 300;
+	
+	var svg = d3.select("body")
+        .append("svg")
+        .attr("width", 800)
+        .attr("height", 500)
+        .append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+		
+	d3.json('https://hivelab.org/static/exam1.json', function (input) {	
+		var i = 0
+		var update = []
+		
+		for (data in input[i]) {
+			if (data != "Year") {
+				var senior = {university: "", value: "", order: ""};
+				senior.university = data;
+				senior.value = input[3][data];
+				senior.order = i;
+				update[i] = senior;
+				i+=1;
+			}
+		}
+		
+		var yScale = d3.scale.linear()
+			.domain([0, 100])
+			.range([height, 0]);		
+		var yAxis = d3.svg.axis()
+			.scale(yScale)
+			.ticks(10)
+			.orient("left")
+		svg.append("g")
+			.attr("class", "y axis")
+			.attr("transform", "translate(0,5)")
+			.call(yAxis)
+		
+		svg.selectAll(".univ")
+			.data(update)
+			.enter().append("text")
+			.attr("class", "univ")
+		    .attr("x", function(d) { return d.order*100+15 })
+		    .attr("y", function(d) { return height+15})
+		    .text(function(d) {return d.university})
+			
+		svg.selectAll(".rect")
+	    	.data(update)
+	    	.enter().append("rect")
+		    .attr("x", function(d) { return d.order*100+40})
+		    .attr("width", 35)
+			.attr("y", function(d) { return height - yScale(100 - d.value)})
+			.attr("height", function(d) { return yScale(100 - d.value)})
+			.attr("fill", function(d) {
+				return "rgb(5, 15, " + (d * 10) + ")";
+				});
+	}
+	)
+</script>
+</div>
+<div id="fixedfooter"></div>
+
+</body>
+</html>
