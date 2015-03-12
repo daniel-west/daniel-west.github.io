@@ -1,0 +1,44 @@
+div#fixedheader {
+	top:0px;
+	left:0px;
+	width:100%;
+	color:#CCC;
+	background:#333;
+	padding:20px;
+}
+#PUbanner {
+	height:35px;
+	width:auto;
+}
+.header {
+	display:inline-block;
+}
+.header1 {
+	display:inline-block;
+}
+#title {
+	margin:0 0 15px 220px;
+	font-size: 250%;
+	}
+#catchy {
+	margin-top:10px;
+	margin-left:20px;
+}
+body{
+	background-color:#F1ECD6;
+	}
+div#fixedfooter {
+	position:fixed;
+	bottom:0px;
+	left:0px;
+	width:100%;
+	color:#F1ECD6;
+	background:#333;
+	height:10px;
+}
+
+.axis path,.axis line {
+  fill: none;
+  stroke: gold;
+  shape-rendering: crispEdges;
+}
