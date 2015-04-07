@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Daniel West - HW4</title>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+	<script src="http://d3js.org/d3.v2.js"></script>
+	<script src="http://code.jquery.com/jquery-1.7.1.js"></script>
+</head>
+<body>
+	<div id="fixedheader">
+		<div class="header"> <img id="PUbanner" src="https://www.purdue.edu/purdue/images/logo.png" />
+		</div>
+		<div id = "title" class="header">IE 590 - Data Visualization Theory and Practice
+		</div>
+	</div>
+	<div id="treemap">
+<p id="charttitle" align="center">Beverage Sales Treemap with D3</p>
+</p>
+<p id="chart">
+<p id="rawdata">
+
+<script src="treemap.js"></script>
+<script>
+	function reSortRoot(root,value_key) {
+		for (var key in root) {
+			if (key == "key") {
+				root.name = root.key;
+				delete root.key;
+			}
+			if (key == "values") {
+				root.children = [];
+				for (item in root.values) {
+					root.children.push(reSortRoot(root.values[item],value_key));
+				}
+				delete root.values;
+			}
+			if (key == value_key) {
+				root.value = parseFloat(root[value_key]);
+				delete root[value_key];
+			}
+		}
+		return root;
+	}
+	$( document ).ready(function() {
+    		d3.csv("coffee.csv", function(csv_data){
+		 var nested_data = d3.nest()
+      		.key(function(d){ return d.region;})
+      		.key(function(d){ return d.state;})
+      		.key(function(d){ return d.category;})
+    		.key(function(d){ return d.type;})
+		.entries(csv_data);
+		
+		var root = {};
+		root.key = "Data";
+		root.values = nested_data;
+		root = reSortRoot(root,"sales");
+		loadData(root);
+		});
+	});
+</script>
+</div>
+	<div id="fixedfooter"></div>
+</body>
+</html>
