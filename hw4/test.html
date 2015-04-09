@@ -65,7 +65,7 @@ var svg = d3.select("body").append("svg")
  
 queue()
  .defer(d3.json, "us.json")
- .defer(d3.csv, "data1.csv")
+ .defer(d3.csv, "data.csv")
  .await(ready);
  
 function ready(error, us, data) {
@@ -73,8 +73,8 @@ function ready(error, us, data) {
  var pairNameWithId = {};
  
 data.forEach(function(d) {
- pairRateWithId[d.id] = +d.CostperHome;
- pairNameWithId[d.id] = d.State;
+ pairRateWithId[d.id] = +d.rate;
+ pairNameWithId[d.id] = d.name;
  });
  svg.append("g")
  .attr("class", "county")
