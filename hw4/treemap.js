@@ -155,9 +155,7 @@ function display(d) {
 			svg.style("shape-rendering", "crispEdges");
 			transitioning = false;
 		});
-
 	}
-
 	return g;
 }
 
@@ -183,13 +181,6 @@ function foreign(foreign){ /* added */
 
 function name(d) {
 	return d.parent ? name(d.parent) + "." + d.name : d.name;
-}
-
-function loadJSONFile(file) {
-	/* load in data, display root */
-	d3.json(file, function(root) {
-		loadData(root);
-	});
 }
 
 function loadData(root) {
