@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Chloropleth Example</title>
+	<title>Chloropleth Example1</title>
 	<script src="http://d3js.org/d3.v3.js"></script>
 </head>
 <body>
@@ -20,7 +20,7 @@
 					.append("svg")
 					.attr("width", w)
 					.attr("height", h);
-		d3.csv("Sep2009costperhome.csv", function(data) {
+		d3.csv("2005costPerHome.csv", function(data) {
 			color.domain([
 				d3.min(data, function(d) { return d.value; }), 
 				d3.max(data, function(d) { return d.value; })
