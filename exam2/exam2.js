@@ -14,7 +14,7 @@ $(document).ready(function () {
             $('#collegeapps').append(tr);
 	}
 	});
-	$('#collegeapps tbody tr').live('click', function(event) {
+	$('#collegeapps tbody tr').on('click', function(event) {
 	$(this).addClass('highlight').siblings().removeClass('highlight');
 	});
 });
