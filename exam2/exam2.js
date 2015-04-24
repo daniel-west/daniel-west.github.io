@@ -1,6 +1,7 @@
 $(document).ready(function () {
 	$.getJSON("https://hivelab.org/static/exam2.json", function (json) {
         var tr;
+        var score;
         for (var i = 0; i < json.length; i++) {
             tr = $('<tr/>');
             tr.append("<td>" + json[i].ItemNo + "</td>");
