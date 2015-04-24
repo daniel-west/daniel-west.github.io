@@ -13,14 +13,14 @@ body{
 	}
 td{
 	border: 2px solid black;
-	padding: 5px;
+	padding: 10px;
 	background:white;
 	text-align:right;
 }
 th{
 	border: 2px solid black;
 	background:white;
-	padding: 5px;
+	padding: 10px;
 	text-align:right;
 }
 p{
