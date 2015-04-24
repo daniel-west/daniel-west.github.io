@@ -12,18 +12,18 @@
       <tbody></tbody>
 </table>
 <script>
-	d3.json("https://hivelab.org/static/exam2.json", function(data) {
-		var key=Object.keys(data[0]);
+	d3.json("https://hivelab.org/static/exam2.json", function(input) {
+		var value = Object.value(input[0]);
 		var thead = d3.select("thead").selectAll("th")
-			.data(key)
+			.input(value)
 			.enter().append("th")
 			.text(function(d){return d});
 		var tr = d3.select("tbody")
 			.selectAll("tr")
-			.data(data)
+			.input(input)
 			.enter().append("tr")
 		var td = tr.selectAll("td")
-			.data(function(d){return d3.values(d)})
+			.input(function(d){return d3.values(d)})
 			.enter().append("td")
 			.text(function(d) {return d})
 });
