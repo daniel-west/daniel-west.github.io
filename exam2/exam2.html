@@ -21,7 +21,7 @@
 			.data(key)
 			.enter().append("th")
 			.text(function(d){return d});
-		var tr = d3.select("tbody") /* editing table rows */
+		var rows = d3.select("tbody") /* editing table rows */
 			.selectAll("tr")
 			.data(data)
 			.enter().append("tr")
@@ -31,7 +31,7 @@
 				d3.select(this)
 					.classed("action",true);
 		})
-		var td = tr.selectAll("td") /* editing table cells */
+		var td = rows.selectAll("td") /* editing table cells */
 			.data(function(d){return d3.values(d)})
 			.enter().append("td")
 			.text(function(d) {return d})
