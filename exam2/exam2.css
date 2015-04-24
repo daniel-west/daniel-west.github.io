@@ -14,11 +14,14 @@ body{
 td{
 	border: 2px solid black;
 	padding: 5px;
+	background:white;
+	text-align:right;
 }
 th{
 	border: 2px solid black;
-	background:gray;
+	background:white;
 	padding: 5px;
+	text-align:right;
 }
 p{
 width:740px;
