@@ -14,7 +14,6 @@ body{
 td{
 	border: 2px solid black;
 	padding: 2px 10px 2px 10px;
-	background:white;
 	text-align:right;
 }
 th{
@@ -23,7 +22,7 @@ th{
 	padding: 2px 10px 2px 10px;
 	text-align:right;
 }
-tr:hover{
+tr: hover{
 	background-color: yellow;
 }
 .clicked {
