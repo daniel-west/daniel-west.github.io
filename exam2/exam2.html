@@ -22,6 +22,12 @@
 			.selectAll("tr")
 			.data(data)
 			.enter().append("tr")
+			.on("click", function(d) {
+				d3.selectAll("tr")
+					.classed("clicked",false);
+				d3.select(this)
+					.classed("clicked",true);
+		})
 		var td = tr.selectAll("td")
 			.data(function(d){return d3.values(d)})
 			.enter().append("td")
