@@ -12,7 +12,7 @@
 <h1>Daniel West</h1>
 <h1>IE 590 Exam 2 - Part 2</h1>
 <h2>15 item numbers and their corresponding values with column sort.</h2>
-<table>
+<table id="myTable">
       <thead></thead>
       <tbody></tbody>
 </table>
@@ -23,8 +23,8 @@
 			.data(key)
 			.enter().append("th")
 			.text(function(d){return d});
-			.on("click", sort(return d3.descending(data);
-			})
+			/* .on("click", sort(return d3.descending(data); */
+			/*}) */
 		var tr = d3.select("tbody") /* editing table rows */
 			.selectAll("tr")
 			.data(data)
