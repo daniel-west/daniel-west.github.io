@@ -20,7 +20,7 @@
 			.text(function(d){return d});
 		var tr = d3.select("tbody")
 			.selectAll("tr")
-			.data(key)
+			.data(data)
 			.enter().append("tr")
 		var td = tr.selectAll("td")
 			.data(function(d){return d3.values(d)})
