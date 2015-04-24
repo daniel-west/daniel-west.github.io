@@ -16,22 +16,22 @@
 </table>
 <script>
 	d3.json("https://hivelab.org/static/exam2.json", function(data) {
-		var key = Object.keys(data[0]);
-		var thead = d3.select("thead").selectAll("th")
+		var key = Object.keys(data[0]); /* placeholder */
+		var thead = d3.select("thead").selectAll("th") /* editing table headers */
 			.data(key)
 			.enter().append("th")
 			.text(function(d){return d});
-		var tr = d3.select("tbody")
+		var tr = d3.select("tbody") /* editing table rows */
 			.selectAll("tr")
 			.data(data)
 			.enter().append("tr")
-			.on("click", function(d) {
+			.on("click", function(d) { /* highlighting rows */
 				d3.selectAll("tr")
 					.classed("action",false);
 				d3.select(this)
 					.classed("action",true);
 		})
-		var td = tr.selectAll("td")
+		var td = tr.selectAll("td") /* editing table cells */
 			.data(function(d){return d3.values(d)})
 			.enter().append("td")
 			.text(function(d) {return d})
