@@ -13,5 +13,8 @@ $(document).ready(function () {
             tr.append("<td>" + json[i].G + "</td>");
             $('#collegeapps').append(tr);
 	}
+	$('#collegeapps tbody tr').live('click', function(event) {
+	$(this).addClass('highlight').siblings().removeClass('highlight');
+	});
 	});
 });
