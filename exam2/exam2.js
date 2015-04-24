@@ -18,3 +18,8 @@ $(document).ready(function () {
 	$(this).addClass('highlight').siblings().removeClass('highlight');
 	});
 });
+$(document).ready(function() 
+    { 
+        $("#myTable").tablesorter(); 
+    } 
+);
