@@ -23,6 +23,12 @@ th{
 	padding: 2px 10px 2px 10px;
 	text-align:right;
 }
+tr:hover{
+	background-color: yellow;
+}
+.clicked {
+	background-color: green;
+}
 p{
 width:740px;
 	margin-left: auto;
