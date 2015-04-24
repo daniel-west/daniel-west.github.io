@@ -13,11 +13,12 @@ body{
 	}
 td{
 	border: 2px solid black;
+	padding: 5px;
 }
 th{
 	border: 2px solid black;
 	background:gray;
-	padding: 3px;
+	padding: 5px;
 }
 p{
 width:740px;
