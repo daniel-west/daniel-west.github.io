@@ -9,7 +9,7 @@ body{
 	}
 #collegeapps{
 	text-align:center;
-	padding: 20px;
+	padding: 3px;
 	}
 td{
 	border: 2px solid black;
@@ -17,6 +17,7 @@ td{
 th{
 	border: 2px solid black;
 	background:gray;
+	padding: 3px;
 }
 p{
 width:740px;
