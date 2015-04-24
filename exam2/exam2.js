@@ -11,6 +11,7 @@ $(document).ready(function () {
             tr.append("<td>" + json[i].E + "</td>");
             tr.append("<td>" + json[i].F + "</td>");
             tr.append("<td>" + json[i].G + "</td>");
+            $('#collegeapps').append(tr);
 	}
 	});
 });
