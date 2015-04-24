@@ -13,7 +13,7 @@
 </table>
 <script>
 	d3.json("https://hivelab.org/static/exam2.json", function(input) {
-		var value = Object.value(input[0]);
+		var value = Object.keys(input[0]);
 		var thead = d3.select("thead").selectAll("th")
 			.input(value)
 			.enter().append("th")
