@@ -18,6 +18,9 @@
 			.data(key)
 			.enter().append("th")
 			.text(function(d){return d});
+			.sort(function(a,b){
+				return d3.descending(a.close, b.close);
+			});
 		var tr = d3.select("tbody")
 			.selectAll("tr")
 			.data(data)
