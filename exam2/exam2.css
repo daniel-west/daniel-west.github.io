@@ -25,7 +25,7 @@ th{
 tr:hover{
 	background-color: yellow;
 }
-.clicked {
+.action {
 	background-color: green;
 }
 p{
