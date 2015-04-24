@@ -1,0 +1,21 @@
+$(document).ready(function () {
+	$.getJSON("http://hivelab.org/static/exam2.json", function (json) {
+        var tr;
+		var score;
+        for (var i = 0; i < json.length; i++) {
+            tr = $('<tr/>');
+            tr.append("<td>" + json[i].ItemNo + "</td>");
+            tr.append("<td>" + json[i].A + "</td>");
+            tr.append("<td>" + json[i].B + "</td>");
+            tr.append("<td>" + json[i].C + "</td>");
+            tr.append("<td>" + json[i].D + "</td>");
+            tr.append("<td>" + json[i].E + "</td>");
+            tr.append("<td>" + json[i].F + "</td>");
+            tr.append("<td>" + json[i].G + "</td>");
+			var score;
+			score = (json[i].A + json[i].B)/2;
+			tr.append("<td>" + score + "</td>");
+            $('#collegeapps').append(tr); 
+        }
+	});
+});
