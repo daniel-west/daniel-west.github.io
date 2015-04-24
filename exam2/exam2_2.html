@@ -1,0 +1,37 @@
+<!DOCYTYPE html>
+<html> 
+<head>
+<title>9</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="exam2.js"></script>
+		<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+		<link type="text/css" rel="stylesheet" href="exam2.css"/>
+</head>
+<table>
+      <thead></thead>
+      <tbody></tbody>
+</table>
+<script>
+	d3.json("https://hivelab.org/static/exam2.json", function(data) {
+		var key = Object.keys(data[0]);
+		var thead = d3.select("thead").selectAll("th")
+			.data(key)
+			.enter().append("th")
+			.text(function(d){return d});
+		var tr = d3.select("tbody")
+			.selectAll("tr")
+			.data(data)
+			.enter().append("tr")
+			.on("click", function(d) {
+				d3.selectAll("tr")
+					.classed("action",false);
+				d3.select(this)
+					.classed("action",true);
+		})
+		var td = tr.selectAll("td")
+			.data(function(d){return d3.values(d)})
+			.enter().append("td")
+			.text(function(d) {return d})
+});
+</script>
+</html>
