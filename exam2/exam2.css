@@ -30,3 +30,7 @@ width:740px;
 	margin-top: 0px;
 	font-size:75%;
 }
+
+.table-striped tbody tr.highlight td {
+	    background-color: green;
+}
