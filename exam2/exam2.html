@@ -16,9 +16,12 @@
 		var key=Object.keys(data[0]);
 		var thead = d3.select("thead").selectAll("th")
 			.data(key)
-			.enter().append("th").text(function(d){return d});
-		var tr = d3.select("tbody").selectAll("tr")
-			.data(data).enter().append("tr")
+			.enter().append("th")
+			.text(function(d){return d});
+		var tr = d3.select("tbody")
+			.selectAll("tr")
+			.data(data)
+			.enter().append("tr")
 		var td = tr.selectAll("td")
 			.data(function(d){return d3.values(d)})
 			.enter().append("td")
