@@ -1,5 +1,5 @@
 $(document).ready(function () {
-	$.getJSON("http://hivelab.org/static/exam2.json", function (json) {
+	$.getJSON("https://hivelab.org/static/exam2.json", function (json) {
         var tr;
 		var score;
         for (var i = 0; i < json.length; i++) {
